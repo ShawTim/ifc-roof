@@ -1,0 +1,58 @@
+body {
+  background: #242424;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.date-picker {
+  margin-top: 20px;
+}
+
+div.time-picker {
+  margin-top: 10px;
+}
+
+div.image-container {
+  margin-top: 30px;
+  background: url(./roof.jpg);
+  width: 560px;
+  height: 426px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.date-text,
+div.time-text,
+div.minute-text {
+  text-align: end;
+  color: #C2C2C2;
+  font-size: 36px;
+  margin-top: 295px;
+  text-shadow: 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000;
+  transform: scale(0.9, 1.2);
+  font-family: Verdana;
+  line-height: 1em;
+}
+
+div.time-text {
+  min-width: 40px;
+}
+
+div.minute-text {
+  min-width: 70px;
+}
+
+div.empty {
+  width: 260px;
+}
+
+div.convert-button {
+  margin-top: 20px;
+}
+
+div.footer {
+  margin-top: 20px;
+  color: #A7A7A7;
+  font-size: 12px;
+}

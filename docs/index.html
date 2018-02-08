@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <title>香港交易廣場天台生成器</title>
+    <meta charset="utf8">
+    <meta property="og:image" content="./thumbnail.jpg" />
+    <link rel="shortcut icon" href="./thumbnail.jpg">
+    <link rel="stylesheet" type="text/css" href="./roof.css"> 
+    <link rel="stylesheet" type="text/css" href="./js/jquery-ui.min.css"> 
+    <script type="text/javascript" src="./js/html2canvas.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script>
+      var convertImage = () => {
+        html2canvas($(".image-container").get(0)).then((canvas) => $(".download-link").attr("href", canvas.toDataURL()));
+      };
+      $(function() {
+        $(".date-picker").datepicker({
+          dateFormat: "m###d%%%",
+          onSelect: (date) => {
+            var text = date.replace("###", "月").replace("%%%", "日");
+            $(".date-text").html(text);
+            convertImage();
+          }
+        });
+        $(".time-picker select").change((e) => {
+          $(".time-text").html(e.target.value);
+          convertImage();
+        });
+        $(".date-text").html((new Date().getMonth()+1) + "月" + new Date().getDate() + "日");
+        $(".time-text").html(5);
+        convertImage();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="date-picker"></div>
+    <div class="time-picker">
+      <select>
+        <option value="1">1 PM</option>
+        <option value="2">2 PM</option>
+        <option value="3">3 PM</option>
+        <option value="4">4 PM</option>
+        <option value="5">5 PM</option>
+        <option value="6">6 PM</option>
+        <option value="7">7 PM</option>
+        <option value="8">8 PM</option>
+        <option value="9">9 PM</option>
+        <option value="10">10 PM</option>
+        <option value="11">11 PM</option>
+        <option value="12">12 PM</option>
+      </select>
+    </div>
+    <div class="image-container">
+      <div class="date-text"></div>
+      <div class="time-text"></div>
+      <div class="minute-text">00</div>
+      <div class="empty"></div>
+    </div>
+    <div class="convert-button">
+      <a class="download-link" download="交易廣場天台.png"><button>Download</button></a>
+    </div>
+    <div class="footer">
+      Created by <a href="https://github.com/ShawTim">ShawTim</a>. Tested with Firefox Quantum.
+    </div>
+  </body>
+</html>
