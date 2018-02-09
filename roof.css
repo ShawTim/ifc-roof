@@ -27,10 +27,10 @@ div.time-text,
 div.minute-text {
   text-align: end;
   color: #C2C2C2;
-  font-size: 8px;
+  font-size: 36px;
   margin-top: 295px;
   text-shadow: 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000;
-  transform: scale(3.6, 4.8);
+  transform: scale(0.9, 1.2);
   font-family: "PMingLiU", Times, serif;
   line-height: 1em;
 }
