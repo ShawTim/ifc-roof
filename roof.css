@@ -31,7 +31,7 @@ div.minute-text {
   margin-top: 295px;
   text-shadow: 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000, 0 0 3px #000000;
   transform: scale(0.9, 1.2);
-  font-family: Verdana;
+  font-family: "PMingLiU", Times, serif;
   line-height: 1em;
 }
 
