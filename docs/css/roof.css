@@ -114,6 +114,7 @@ div.location {
   text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
   transform: scale(0.7, 1.1);
   top: 2px;
+  white-space: nowrap;
 }
 
 div.line-end2 {
