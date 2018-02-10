@@ -4,30 +4,49 @@
     <meta charset="utf8">
     <meta property="og:image" content="https://shawtim.github.io/ifc-roof/thumbnail.jpg" />
     <link rel="shortcut icon" href="./thumbnail.jpg">
-    <link rel="stylesheet" type="text/css" href="./roof.css"> 
-    <link rel="stylesheet" type="text/css" href="./js/jquery-ui.min.css"> 
-    <script type="text/javascript" src="./js/html2canvas.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/jquery.timepicker.min.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/roof.css"> 
     <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.timepicker.min.js"></script>
+    <script type="text/javascript" src="./js/html2canvas.min.js"></script>
     <script>
       var convertImage = () => {
         html2canvas($(".image-container").get(0)).then((canvas) => $(".download-link").attr("href", canvas.toDataURL()));
       };
       $(function() {
         $(".date-picker").datepicker({
-          dateFormat: "m###d%%%",
+          dateFormat: "m d",
           onSelect: (date) => {
-            var text = date.replace("###", "月").replace("%%%", "日");
-            $(".date-text").html(text);
+            var arr = date.split(' ');
+            $(".month").text(arr[0]);
+            $(".day").text(arr[1]);
             convertImage();
           }
         });
-        $(".time-picker select").change((e) => {
-          $(".time-text").html(e.target.value);
-          convertImage();
+        $(".time-picker input").timepicker({
+          timeFormat: 'h:mm p',
+          defaultTime: '17',
+          change: (time) => {
+            var hour = time.getHours();
+            var minutes = time.getMinutes();
+            $(".hour").text(hour > 12 ? hour-12 : hour);
+            $(".minute").text(minutes < 10 ? '0'+minutes : minutes);
+            convertImage();
+          }
         });
-        $(".date-text").html((new Date().getMonth()+1) + "月" + new Date().getDate() + "日");
-        $(".time-text").html(5);
+        $(".location-picker input").keyup((e) => {
+          var location = e.target.value;
+          if (!!location) {
+            $(".location").text(location);
+          } else {
+            $(".location").text("香港交易廣場天台");
+          }
+          convertImage();
+        })
+        $(".month").text(new Date().getMonth()+1);
+        $(".day").text(new Date().getDate());
         convertImage();
       });
     </script>
@@ -35,26 +54,27 @@
   <body>
     <div class="date-picker"></div>
     <div class="time-picker">
-      <select>
-        <option value="1">1 PM</option>
-        <option value="2">2 PM</option>
-        <option value="3">3 PM</option>
-        <option value="4">4 PM</option>
-        <option value="5">5 PM</option>
-        <option value="6">6 PM</option>
-        <option value="7">7 PM</option>
-        <option value="8">8 PM</option>
-        <option value="9">9 PM</option>
-        <option value="10">10 PM</option>
-        <option value="11">11 PM</option>
-        <option value="12">12 PM</option>
-      </select>
+      <input type="text"/>
+    </div>
+    <div class="location-picker">
+      <input type="text" placeholder="香港交易廣場天台"/>
     </div>
     <div class="image-container">
-      <div class="date-text"></div>
-      <div class="time-text"></div>
-      <div class="minute-text">00</div>
-      <div class="empty"></div>
+      <div class="text-row">
+        <div class="month number"></div>
+        <div class="month-text text">月</div>
+        <div class="day number"></div>
+        <div class="day-text text">日</div>
+        <div class="hour number">5</div>
+        <div class="colon-text text">:</div>
+        <div class="minute number">00</div>
+        <div class="ampm-text text">PM</div>
+        <div class="line-end1"></div>
+      </div>
+      <div class="text-row">
+        <div class="location text">香港交易廣場天台</div>
+        <div class="line-end2"></div>
+      </div>
     </div>
     <div class="convert-button">
       <a class="download-link" download="交易廣場天台.png"><button>Download</button></a>
