@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'DejaVu Serif';
+  src: url('../DejaVuSerif.ttf') format('truetype');
+}
+
 body {
   background: #242424;
   display: flex;
