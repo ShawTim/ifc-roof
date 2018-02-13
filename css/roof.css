@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'DejaVu Serif';
-  src: url('../DejaVuSerif.ttf') format('truetype');
+  src: url('./DejaVuSerif.ttf') format('truetype');
 }
 
 body {
@@ -34,7 +34,7 @@ div.location-picker input {
 
 div.image-container {
   margin-top: 30px;
-  background: url(../roof.jpg);
+  background: url(./roof.jpg);
   width: 560px;
   height: 426px;
   display: flex;
@@ -135,3 +135,5 @@ div.footer {
   color: #A7A7A7;
   font-size: 12px;
 }
+
+@import url(./jquery-ui.min.css)

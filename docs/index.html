@@ -4,52 +4,7 @@
     <meta charset="utf8">
     <meta property="og:image" content="https://shawtim.github.io/ifc-roof/thumbnail.jpg" />
     <link rel="shortcut icon" href="./thumbnail.jpg">
-    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css"> 
-    <link rel="stylesheet" type="text/css" href="./css/jquery.timepicker.min.css"> 
-    <link rel="stylesheet" type="text/css" href="./css/roof.css"> 
-    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="./js/jquery.timepicker.min.js"></script>
-    <script type="text/javascript" src="./js/html2canvas.min.js"></script>
-    <script>
-      var convertImage = () => {
-        html2canvas($(".image-container").get(0)).then((canvas) => $(".download-link").attr("href", canvas.toDataURL()));
-      };
-      $(function() {
-        $(".date-picker").datepicker({
-          dateFormat: "m d",
-          onSelect: (date) => {
-            var arr = date.split(' ');
-            $(".month").text(arr[0]);
-            $(".day").text(arr[1]);
-            convertImage();
-          }
-        });
-        $(".time-picker input").timepicker({
-          timeFormat: 'h:mm p',
-          defaultTime: '17',
-          change: (time) => {
-            var hour = time.getHours();
-            var minutes = time.getMinutes();
-            $(".hour").text(hour > 12 ? hour-12 : hour);
-            $(".minute").text(minutes < 10 ? '0'+minutes : minutes);
-            convertImage();
-          }
-        });
-        $(".location-picker input").keyup((e) => {
-          var location = e.target.value;
-          if (!!location) {
-            $(".location").text(location);
-          } else {
-            $(".location").text("香港交易廣場天台");
-          }
-          convertImage();
-        })
-        $(".month").text(new Date().getMonth()+1);
-        $(".day").text(new Date().getDate());
-        convertImage();
-      });
-    </script>
+    <script type="text/javascript" src="./bundle.min.js"></script>
   </head>
   <body>
     <div class="date-picker"></div>
