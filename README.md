@@ -9,6 +9,7 @@ See [demo](https://shawtim.github.io/ifc-roof/) on Github page.
 
 ### Installation
 `npm i`
+
 `npm run build`
 
 All built files will then delivered to `/docs` folder. (the default Github page folder)
