@@ -132,8 +132,18 @@ div.convert-button {
 
 div.footer {
   margin-top: 20px;
-  color: #A7A7A7;
   font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  span {
+    margin-left: 10px;
+  }
 }
 
 @import url(./jquery-ui.min.css)
