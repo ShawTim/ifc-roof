@@ -10,29 +10,29 @@ body {
   align-items: center;
 }
 
-div.date-picker {
+.date-picker {
   margin-top: 20px;
 }
 
-div.time-picker {
+.time-picker {
   margin-top: 10px;
+
+  input {
+    width: 100px;
+    text-align: center;
+  }
 }
 
-div.time-picker input {
-  width: 100px;
-  text-align: center;
-}
-
-div.location-picker {
+.location-picker {
   margin-top: 10px;
+
+  input {
+    width: 200px;
+    text-align: center;
+  }
 }
 
-div.location-picker input {
-  width: 200px;
-  text-align: center;
-}
-
-div.image-container {
+.image-container {
   margin-top: 30px;
   background: url(./roof.jpg);
   width: 560px;
@@ -41,17 +41,17 @@ div.image-container {
   flex-direction: column;
 }
 
-div.text-row {
+.text-row {
   display: flex;
   justify-content: flex-end;
+
+  > div {
+    position: relative;
+  }
 }
 
-div.text-row > div {
-  position: relative;
-}
-
-div.text,
-div.number {
+.text,
+.number {
   text-align: end;
   color: #C2C2C2;
   font-size: 36px;
@@ -60,77 +60,77 @@ div.number {
   line-height: 1em;
 }
 
-div.text {
+.text {
   transform: scale(0.8, 1.2);
   transform-origin: right;
 }
 
-div.number {
+.number {
   transform: scale(0.95, 1.2);
   transform-origin: right;
 }
 
-div.month,
-div.month-text,
-div.day,
-div.day-text,
-div.hour,
-div.colon-text,
-div.minute,
-div.ampm-text {
+.month,
+.month-text,
+.day,
+.day-text,
+.hour,
+.colon-text,
+.minute,
+.ampm-text {
   margin-top: 288px;
 }
 
-div.month {
+.month {
   right: -17px;
 }
 
-div.month-text {
+.month-text {
   right: -9px;
 }
 
-div.day {
+.day {
   right: -7px;
 }
 
-div.hour {
+.hour {
   min-width: 47px;
 }
 
-div.colon-text {
+.colon-text {
   min-width: 18px;
   top: -7px;
 }
 
-div.minute {
+.minute {
   min-width: 48px;
   right: -5px;
 }
 
-div.ampm-text {
+.ampm-text {
   transform: scale(0.9, 1.2);
 }
 
-div.line-end1 {
+.line-end1 {
   width: 205px;
 }
 
-div.location {
+.location {
   text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
   transform: scale(0.7, 1.1);
   top: 2px;
   white-space: nowrap;
 }
 
-div.line-end2 {
+.line-end2 {
   width: 230px;
 }
 
-div.convert-button {
+.convert-button {
   margin-top: 20px;
 }
 
-div.footer {
+.footer {
   margin-top: 20px;
   font-size: 12px;
   display: flex;

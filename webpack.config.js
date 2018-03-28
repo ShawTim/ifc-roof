@@ -20,10 +20,11 @@ module.exports = {
   ],
   module: {
     loaders: [{
-      test: /\.css$/,
+      test: /\.(s)*css$/,
       loaders: [
         'style-loader',
-        'css-loader'
+        'css-loader',
+        'sass-loader'
       ]
     }, {
       test: /\.(ttf|jpg|png)$/,

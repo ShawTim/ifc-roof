@@ -1,5 +1,5 @@
 import 'jquery-timepicker/jquery.timepicker.css';
-import '../css/roof.css';
+import '../css/roof.scss';
 
 import 'jquery-ui/ui/widgets/datepicker';
 import 'jquery-timepicker/jquery.timepicker';
