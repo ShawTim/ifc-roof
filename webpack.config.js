@@ -19,23 +19,25 @@ module.exports = {
     ])
   ],
   module: {
-    loaders: [{
-      test: /\.(s)*css$/,
-      loaders: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
-      ]
-    }, {
-      test: /\.(ttf|jpg|png)$/,
-      loaders: [
-        'url-loader'
-      ]
-    }, {
-      test: /\.js$/,
-      loaders: [
-        'babel-loader?presets[]=es2015'
-      ]
-    }]
+    rules: [
+      {
+        test: /\.(s)*css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader'}
+        ]
+      }, {
+        test: /\.(ttf|jpg|png)$/,
+        use: 'url-loader'
+      }, {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: { presets: ['@babel/preset-env'] }
+        }
+      }
+    ],
   }
-}
+};
