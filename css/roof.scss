@@ -41,6 +41,7 @@ body {
   flex-direction: column;
 }
 
+/*
 .text-row {
   display: flex;
   justify-content: flex-end;
@@ -49,17 +50,24 @@ body {
     position: relative;
   }
 }
+*/
 
-.text,
-.number {
-  text-align: end;
+.date-time,
+.location {
   color: #C2C2C2;
   font-size: 36px;
-  text-shadow: 0 0 2px #000000, 1px 0 2px #000000, 0 1px 2px #000000, 1px 1px 2px #000000, -1px 0 2px #000000, 0 -1px 2px #000000, -1px -1px 2px #000000, 1px -1px 2px #000000, -1px 1px 2px #000000;
   font-family: "DejaVu Serif";
   line-height: 1em;
+  white-space: nowrap;
+  margin-left: 69px;
 }
 
+.date-time {
+  text-shadow: 0 0 2px #000000, 1px 0 2px #000000, 0 1px 2px #000000, 1px 1px 2px #000000, -1px 0 2px #000000, 0 -1px 2px #000000, -1px -1px 2px #000000, 1px -1px 2px #000000, -1px 1px 2px #000000;
+  margin-top: 288px;
+}
+
+/*
 .text {
   transform: scale(0.8, 1.2);
   transform-origin: right;
@@ -70,60 +78,15 @@ body {
   transform-origin: right;
 }
 
-.month,
-.month-text,
-.day,
-.day-text,
-.hour,
-.colon-text,
-.minute,
-.ampm-text {
-  margin-top: 288px;
-}
-
-.month {
-  right: -17px;
-}
-
-.month-text {
-  right: -9px;
-}
-
-.day {
-  right: -7px;
-}
-
-.hour {
-  min-width: 47px;
-}
-
-.colon-text {
-  min-width: 18px;
-  top: -7px;
-}
-
-.minute {
-  min-width: 48px;
-  right: -5px;
-}
-
 .ampm-text {
   transform: scale(0.9, 1.2);
 }
-
-.line-end1 {
-  width: 205px;
-}
+*/
 
 .location {
   text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
-  transform: scale(0.7, 1.1);
-  top: 2px;
-  white-space: nowrap;
-}
-
-.line-end2 {
-  width: 230px;
+  margin-top: 0;
+  // transform: scale(0.7, 1.1);
 }
 
 .convert-button {

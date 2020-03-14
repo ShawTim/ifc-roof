@@ -30,7 +30,7 @@ $(function() {
       const arr = date.split(' '); // Array<string>
       const fullWidthDate = convertToFullWidth(arr[0] + '月' + arr[1] + '日');
       console.log('Date is changed to:', fullWidthDate);
-      $(".month").text(fullWidthDate);
+      $(".date").text(fullWidthDate);
     }
   });
 
@@ -45,7 +45,7 @@ $(function() {
       const amPm = hour >= 12 ? 'ＰＭ' : 'ＡＭ';
       const fullWidthTime = convertToFullWidth(hourStr + ':' + minuteStr + amPm);
       console.log('Time is changed to:', fullWidthTime);
-      $(".hour").text(fullWidthTime);
+      $(".time").text(fullWidthTime);
     }
   });
 
@@ -58,7 +58,7 @@ $(function() {
   const initDateStr = convertToFullWidth(
     (initDate.getMonth() + 1) + '月' + initDate.getDate() + '日'
   );
-  $(".month").text(initDateStr);
+  $(".date").text(initDateStr);
 
   $(".convert-button button").click((e) => {
     html2canvas($(".image-container").get(0)).then((canvas) => {
