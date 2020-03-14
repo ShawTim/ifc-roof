@@ -39,9 +39,13 @@ $(function() {
     defaultTime: '17',
     change: (time) => {
       const hour = time.getHours();
-      const minutes = time.getMinutes();
-      $(".hour").text(hour > 12 ? hour-12 : hour);
-      $(".minute").text(minutes < 10 ? '0'+minutes : minutes);
+      const minute = time.getMinutes();
+      const hourStr = '' + (hour > 12 ? hour - 12 : hour);
+      const minuteStr = '' + (minute < 10 ? '0' + minute : minute);
+      const amPm = hour >= 12 ? 'ＰＭ' : 'ＡＭ';
+      const fullWidthTime = convertToFullWidth(hourStr + ':' + minuteStr + amPm);
+      console.log('Time is changed to:', fullWidthTime);
+      $(".hour").text(fullWidthTime);
     }
   });
 
