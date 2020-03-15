@@ -64,7 +64,12 @@ $(function() {
   $('.location').text(space + space + '香港交易廣場天台');
 
   $(".convert-button button").click((e) => {
-    html2canvas($(".image-container").get(0)).then((canvas) => {
+    // Keeping scrollY is essential for html2canvas@1.0.0-rc.5
+    // Ding Hai will find you if you remove it.
+    const options = {
+      scrollY: -window.scrollY
+    };
+    html2canvas($(".image-container").get(0), options).then((canvas) => {
       canvas.toBlob((blob) => FileSaver.saveAs(blob, "交易廣場天台.png"));
     });
   });
