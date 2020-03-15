@@ -55,16 +55,19 @@ body {
 .date-time,
 .location {
   color: #C2C2C2;
-  font-size: 36px;
-  font-family: "DejaVu Serif";
-  line-height: 1em;
+  font-size: 46px;
+  font-family: "LiSong Pro", "DejaVu Serif", serif;
+  line-height: .92em;
   white-space: nowrap;
-  margin-left: 69px;
+  margin-left: 72px;
+  letter-spacing: -2px;
+  transform: scale(.6, 1);
+  transform-origin: left;
+  text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
 }
 
 .date-time {
-  text-shadow: 0 0 2px #000000, 1px 0 2px #000000, 0 1px 2px #000000, 1px 1px 2px #000000, -1px 0 2px #000000, 0 -1px 2px #000000, -1px -1px 2px #000000, 1px -1px 2px #000000, -1px 1px 2px #000000;
-  margin-top: 288px;
+  margin-top: 282px;
 }
 
 /*
@@ -84,7 +87,6 @@ body {
 */
 
 .location {
-  text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
   margin-top: 0;
   // transform: scale(0.7, 1.1);
 }
