@@ -5,9 +5,19 @@
 
 body {
   background: #242424;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+a {
+  color: lightskyblue;
+  &:visited,
+  &:hover,
+  &:active {
+    color: lightskyblue;
+  }
 }
 
 .date-picker {
