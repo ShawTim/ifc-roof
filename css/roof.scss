@@ -37,31 +37,19 @@ body {
   background: url(./roof.jpg);
   width: 560px;
   height: 426px;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
-
-/*
-.text-row {
-  display: flex;
-  justify-content: flex-end;
-
-  > div {
-    position: relative;
-  }
-}
-*/
 
 .date-time,
 .location {
   color: #C2C2C2;
   font-size: 46px;
-  font-family: "LiSong Pro", "DejaVu Serif", serif;
-  line-height: .92em;
+  font-family: 'LiSong Pro', 'DejaVu Serif', serif;
+  line-height: 0.92em;
   white-space: nowrap;
   margin-left: 72px;
   letter-spacing: -2px;
-  transform: scale(.6, 1);
+  transform: scale(0.6, 1);
   transform-origin: left;
   text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
 }
@@ -70,25 +58,8 @@ body {
   margin-top: 282px;
 }
 
-/*
-.text {
-  transform: scale(0.8, 1.2);
-  transform-origin: right;
-}
-
-.number {
-  transform: scale(0.95, 1.2);
-  transform-origin: right;
-}
-
-.ampm-text {
-  transform: scale(0.9, 1.2);
-}
-*/
-
 .location {
   margin-top: 0;
-  // transform: scale(0.7, 1.1);
 }
 
 .convert-button {
