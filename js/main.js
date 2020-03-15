@@ -60,6 +60,8 @@ $(function() {
     (initDate.getMonth() + 1) + '月' + initDate.getDate() + '日'
   );
   $(".date").text(initDateStr);
+  $('.time').text(space + convertToFullWidth('5:00') + 'ＰＭ');
+  $('.location').text(space + space + '香港交易廣場天台');
 
   $(".convert-button button").click((e) => {
     html2canvas($(".image-container").get(0)).then((canvas) => {
