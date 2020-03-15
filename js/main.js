@@ -38,13 +38,14 @@ $(function() {
     timeFormat: 'h:mm p',
     defaultTime: '17',
     change: (time) => {
-      const hour = time.getHours();
-      const minute = time.getMinutes();
-      const hourStr = '' + (hour > 12 ? hour - 12 : hour);
-      const minuteStr = '' + (minute < 10 ? '0' + minute : minute);
+      let hour = time.getHours();
+      let minute = time.getMinutes();
       const amPm = hour >= 12 ? 'ＰＭ' : 'ＡＭ';
-      const head = +hourStr > 10 ? '' : space
-      const fullWidthTime = convertToFullWidth(head + hourStr + ':' + minuteStr + amPm);
+      hour = hour % 12;
+      hour = hour ? hour : 12; // Display 12 am rather than 0 am
+      const head = hour > 9 ? '' : space;
+      minute = minute < 10 ? '0' + minute : '' + minute;
+      const fullWidthTime = convertToFullWidth(head + hour + ':' + minute + amPm);
       console.log('Time is changed to:', fullWidthTime);
       $(".time").text(fullWidthTime);
     }
