@@ -43,7 +43,8 @@ $(function() {
       const hourStr = '' + (hour > 12 ? hour - 12 : hour);
       const minuteStr = '' + (minute < 10 ? '0' + minute : minute);
       const amPm = hour >= 12 ? 'ＰＭ' : 'ＡＭ';
-      const fullWidthTime = convertToFullWidth(hourStr + ':' + minuteStr + amPm);
+      const head = +hourStr > 10 ? '' : space
+      const fullWidthTime = convertToFullWidth(head + hourStr + ':' + minuteStr + amPm);
       console.log('Time is changed to:', fullWidthTime);
       $(".time").text(fullWidthTime);
     }
@@ -51,8 +52,8 @@ $(function() {
 
   $(".location-picker input").keyup((e) => {
     const location = e.target.value;
-    $(".location").text(location || "香港交易廣場天台");
-  })
+    $(".location").text(space + space + (location || '香港交易廣場天台'));
+  });
 
   const initDate = new Date();
   const initDateStr = convertToFullWidth(
