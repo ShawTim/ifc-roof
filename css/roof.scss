@@ -1,7 +1,7 @@
-@font-face {
-  font-family: 'DejaVu Serif';
-  src: url('./DejaVuSerif.ttf') format('truetype');
-}
+// Usage: font-family: 'cwtexfangsong', serif;
+@import 'cwtexfangsong.css';
+// Usage: font-family: 'cwtexming', serif;
+// @import 'cwtexming.css';
 
 body {
   background: #242424;
@@ -54,12 +54,13 @@ a {
 .location {
   color: #C2C2C2;
   font-size: 46px;
-  font-family: 'LiSong Pro', 'DejaVu Serif', serif;
+  font-family: 'cwtexfangsong', 'DFKai-sb', 'LiSong Pro', serif;
+  // font-family: 'cwtexming', 'DFKai-sb', 'LiSong Pro', serif;
   line-height: 0.92em;
   white-space: nowrap;
   margin-left: 72px;
   letter-spacing: -2px;
-  transform: scale(0.6, 1);
+  transform: scale(0.65, 1);
   transform-origin: left;
   text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
 }
