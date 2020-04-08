@@ -28,7 +28,7 @@ module.exports = {
           { loader: 'sass-loader'}
         ]
       }, {
-        test: /\.(ttf|jpg|png)$/,
+        test: /\.(jpg|png)$/,
         use: 'url-loader'
       }, {
         test: /\.js$/,
