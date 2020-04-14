@@ -19,6 +19,7 @@ $(function() {
       const minutes = time.getMinutes();
       $(".hour").text(hour > 12 ? hour-12 : hour);
       $(".minute").text(minutes < 10 ? '0'+minutes : minutes);
+      $(".ampm-text").text(hour > 12 ? "PM" : "AM");
     }
   });
 
