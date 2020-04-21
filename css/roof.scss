@@ -1,13 +1,23 @@
-@font-face {
-  font-family: 'DejaVu Serif';
-  src: url('./DejaVuSerif.ttf') format('truetype');
-}
+// Usage: font-family: 'cwtexfangsong', serif;
+@import 'cwtexfangsong.css';
+// Usage: font-family: 'cwtexming', serif;
+// @import 'cwtexming.css';
 
 body {
   background: #242424;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+a {
+  color: lightskyblue;
+  &:visited,
+  &:hover,
+  &:active {
+    color: lightskyblue;
+  }
 }
 
 .date-picker {
@@ -37,93 +47,30 @@ body {
   background: url(./roof.jpg);
   width: 560px;
   height: 426px;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
-.text-row {
-  display: flex;
-  justify-content: flex-end;
-
-  > div {
-    position: relative;
-  }
-}
-
-.text,
-.number {
-  text-align: end;
+.date-time,
+.location {
   color: #C2C2C2;
-  font-size: 36px;
-  text-shadow: 0 0 2px #000000, 1px 0 2px #000000, 0 1px 2px #000000, 1px 1px 2px #000000, -1px 0 2px #000000, 0 -1px 2px #000000, -1px -1px 2px #000000, 1px -1px 2px #000000, -1px 1px 2px #000000;
-  font-family: "DejaVu Serif";
-  line-height: 1em;
+  font-size: 46px;
+  font-family: 'cwtexfangsong', 'DFKai-sb', 'LiSong Pro', serif;
+  // font-family: 'cwtexming', 'DFKai-sb', 'LiSong Pro', serif;
+  line-height: 0.92em;
+  white-space: nowrap;
+  margin-left: 72px;
+  letter-spacing: -2px;
+  transform: scale(0.65, 1);
+  transform-origin: left;
+  text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
 }
 
-.text {
-  transform: scale(0.8, 1.2);
-  transform-origin: right;
-}
-
-.number {
-  transform: scale(0.95, 1.2);
-  transform-origin: right;
-}
-
-.month,
-.month-text,
-.day,
-.day-text,
-.hour,
-.colon-text,
-.minute,
-.ampm-text {
-  margin-top: 288px;
-}
-
-.month {
-  right: -17px;
-}
-
-.month-text {
-  right: -9px;
-}
-
-.day {
-  right: -7px;
-}
-
-.hour {
-  min-width: 47px;
-}
-
-.colon-text {
-  min-width: 18px;
-  top: -7px;
-}
-
-.minute {
-  min-width: 48px;
-  right: -5px;
-}
-
-.ampm-text {
-  transform: scale(0.9, 1.2);
-}
-
-.line-end1 {
-  width: 205px;
+.date-time {
+  margin-top: 282px;
 }
 
 .location {
-  text-shadow: 0 0 3px #000000, 1px 0 3px #000000, 0 1px 3px #000000, 1px 1px 3px #000000, -1px 0 3px #000000, 0 -1px 3px #000000, -1px -1px 3px #000000, 1px -1px 3px #000000, -1px 1px 3px #000000;
-  transform: scale(0.7, 1.1);
-  top: 2px;
-  white-space: nowrap;
-}
-
-.line-end2 {
-  width: 230px;
+  margin-top: 0;
 }
 
 .convert-button {

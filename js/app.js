@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 import 'jquery-timepicker/jquery.timepicker.css';
 import '../css/roof.scss';
 
