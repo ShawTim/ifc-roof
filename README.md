@@ -1,32 +1,34 @@
 ## ifc-roof: 香港交易廣場天台生成器
 
-A simple static generator for a meme from HK famous drama 大時代.
+A modern meme generator for the HK drama 大時代 rooftop scene.
 
 See [demo](https://shawtim.github.io/ifc-roof/) on Github page.
 
 ![Introduction](intro.png)
 
-### Installation
+### Development
 
 ```bash
-npm i
+npm install
+npm start
+```
+
+### Build (GitHub Pages)
+
+```bash
 npm run build
 ```
 
-All built files will then delivered to `/docs` folder. (the default Github page folder)
+The static site is emitted to `docs/`.
 
-### Test
-
-Open `/docs/index.html` in browser to preview, or:
+### Preview Build Locally
 
 ```bash
-npx http-server docs
+npm run preview
 ```
 
-Please make sure the text of location is readable, while spacing and size get close to original image:
+### Core Features
 
-1. Mix of Chinese and English characters, e.g. "香港某 Hotel 騎樓"
-1. Mix of some HKSCS characters, e.g. 一門五傑, "邨" ([reference](https://codepen.io/Edditoria/details/abvozaP))
-1. Reasonably long English name
-1. Cross-platform: Windows, macOS, Linux, Android, iOS
-1. Some common punctuations, e.g. A.P.M.
+1. Select date and time, input location, and render instantly
+1. Full-width date/time style matching the scene overlay
+1. Export generated image as PNG

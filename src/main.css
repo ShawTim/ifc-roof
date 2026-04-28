@@ -1,0 +1,216 @@
+:root {
+  --page: #121212;
+  --ink: #ececec;
+  --ink-soft: #b6b6b6;
+  --accent: #d8d8d8;
+  --accent-dark: #8a8a8a;
+  --panel: #1b1b1b;
+  --edge: #2e2e2e;
+  --control-bg: #141414;
+  --control-border: #3a3a3a;
+}
+
+@font-face {
+  font-family: "cwtexfangsong";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot");
+  src:
+    url("https://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff")
+      format("woff"),
+    url("https://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.ttf")
+      format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "IBM Plex Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 18px,
+      rgba(255, 255, 255, 0.02) 18px,
+      rgba(255, 255, 255, 0.02) 19px
+    ),
+    var(--page);
+}
+
+.hero {
+  padding: 36px 20px 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Noto Serif TC", "PingFang TC", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #f4f4f4;
+}
+
+.hero p {
+  margin: 10px auto 0;
+  max-width: 680px;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.workspace {
+  width: min(1100px, 100% - 32px);
+  margin: 0 auto;
+  padding: 10px 0 24px;
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.controls,
+.stage {
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.controls {
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.field input {
+  border: 1px solid var(--control-border);
+  border-radius: 8px;
+  background: var(--control-bg);
+  color: var(--ink);
+  font: inherit;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+#dateInput,
+#timeInput,
+#locationInput {
+  background: #f1f1f1;
+  color: #111111;
+  border-color: #bbbbbb;
+}
+
+#dateInput::-webkit-calendar-picker-indicator,
+#timeInput::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.field input:focus {
+  outline: 2px solid rgba(216, 216, 216, 0.24);
+  border-color: #d0d0d0;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.actions button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+#resetButton {
+  color: #f2f2f2;
+  background: #2f2f2f;
+  border: 1px solid #4a4a4a;
+}
+
+#downloadButton {
+  color: #111;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+}
+
+.caption {
+  margin: 2px 0 0;
+  font-family: "Noto Serif TC", "PingFang TC", serif;
+  color: var(--ink-soft);
+  min-height: 24px;
+}
+
+.stage {
+  padding: 14px;
+  display: grid;
+  place-items: center;
+}
+
+#previewCanvas {
+  width: min(100%, 560px);
+  aspect-ratio: 560 / 426;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #2f2f2f;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 24px;
+  color: var(--ink-soft);
+}
+
+.foot-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot-link img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.92;
+}
+
+.foot a {
+  color: #d0d0d0;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 28px;
+  }
+}

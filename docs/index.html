@@ -1,47 +1,64 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<!doctype html>
+<html lang="zh-Hant">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>香港交易廣場天台生成器</title>
-    <meta charset="utf8">
-    <meta property="og:image" content="https://shawtim.github.io/ifc-roof/thumbnail.jpg" />
-    <link rel="shortcut icon" href="./thumbnail.jpg">
-    <script type="text/javascript" src="./bundle.min.js"></script>
-    <script type="text/javascript" src="https://shawtim.github.io/doge/doge.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114319536-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-114319536-1');
-    </script>
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-			(adsbygoogle = window.adsbygoogle || []).push({
-				google_ad_client: "ca-pub-6899345070228180",
-				enable_page_level_ads: true
-			});
-		</script>
+    <meta property="og:image" content="./assets/thumbnail-89MZThOj.jpg" />
+    <link rel="icon" href="./assets/thumbnail-89MZThOj.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-CAznlhJU.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DJn3hsrM.css">
   </head>
   <body>
-    <div class="date-picker"></div>
-    <div class="time-picker">
-      <input type="text"/>
-    </div>
-    <div class="location-picker">
-      <input type="text" placeholder="香港交易廣場天台"/>
-    </div>
-    <div class="image-container">
-      <div class="date-time">
-        <span class="date"></span><span class="time"></span>
-      </div>
-      <div class="location"></div>
-    </div>
-    <div class="convert-button">
-      <button>Download</button>
-    </div>
-    <div class="footer">
-      <a href="https://github.com/ShawTim/ifc-roof" target="_blank"><img src="./github.png"/></a>
-      <span>Created by <a href="https://github.com/ShawTim" target="_blank">ShawTim</a>.</span>
-    </div>
+    <header class="hero">
+      <h1>香港交易廣場天台生成器</h1>
+      <p>重塑《大時代》經典一刻，輸入日期、時間與地點即時出圖。</p>
+    </header>
+
+    <main class="workspace">
+      <section class="controls" aria-label="Generator controls">
+        <label class="field">
+          <span>日期</span>
+          <input id="dateInput" type="date" />
+        </label>
+
+        <label class="field">
+          <span>時間</span>
+          <input id="timeInput" type="time" step="60" />
+        </label>
+
+        <label class="field">
+          <span>地點</span>
+          <input id="locationInput" type="text" placeholder="香港交易廣場天台" maxlength="34" />
+        </label>
+
+        <div class="actions">
+          <button id="resetButton" type="button">重設</button>
+          <button id="downloadButton" type="button">下載 PNG</button>
+        </div>
+
+        <p id="caption" class="caption" aria-live="polite"></p>
+      </section>
+
+      <section class="stage" aria-label="Generated image">
+        <canvas id="previewCanvas" width="1120" height="852"></canvas>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <a class="foot-link" href="https://github.com/ShawTim/ifc-roof" target="_blank" rel="noreferrer">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RERCMUIwOUY4NkNFMTFFM0FBNTJFRTMzNTJEMUJDNDYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RERCMUIwOUU4NkNFMTFFM0FBNTJFRTMzNTJEMUJDNDYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU1MTc4QTJBOTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU1MTc4QTJCOTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jUqS1wAAApVJREFUeNq0l89rE1EQx3e3gVJoSPzZeNEWPKgHoa0HBak0iHiy/4C3WvDmoZ56qJ7txVsPQu8qlqqHIhRKJZceesmhioQEfxTEtsoSpdJg1u/ABJ7Pmc1m8zLwgWTmzcw3L+/te+tHUeQltONgCkyCi2AEDHLsJ6iBMlgHL8FeoqokoA2j4CloRMmtwTmj7erHBXPgCWhG6a3JNXKdCiDl1cidVbXZkJoXQRi5t5BrxwoY71FzU8S4JuAIqFkJ2+BFSlEh525b/hr3+k/AklDkNsf6wTT4yv46KIMNpsy+iMdMc47HNWxbsgVcUn7FmLAzzoFAWDsBx+wVP6bUpp5ewI+DOeUx0Wd9D8F70BTGNjkWtqnhmT1JQAHcUgZd8Lo3rQb1LAT8eJVUfgGvHQigGp+V2Z0iAUUl8QH47kAA1XioxIo+bRN8OG8F/oBjwv+Z1nJgX5jpdzQDw0LCjsPmrcW7I/iHScCAEDj03FtD8A0EyuChHgg4KTlJQF3wZ7WELppnBX+dBFSVpJsOBWi1qiRgSwnOgoyD5hmuJdkWCVhTgnTvW3AgYIFrSbZGh0UW/Io5Vp+DQoK7o80pztWMemZbgxeNwCNwDbw1fIfgGZjhU6xPaJgBV8BdsMw5cbZoHsenwYFxkZzl83xTSKTiviCAfCsJLysH3POfC8m8NegyGAGfLP/VmGmfSChgXroR0RSWjEFv2J/nG84cuKFMf4sTCZqXuJd4KaXFVjEG3+tw4eXbNK/YC9oXXs3O8NY8y99L4BXY5cvLY/Bb2VZ58EOJVcB18DHJq9lRsKr8inyKGVjlmh29mtHs3AHfuhCwy1vXT/Nu2GKQt+UHsGdctyX6eQyNvc+5sfX9Dl7Pe2J/BRgAl2CpwmrsHR0AAAAASUVORK5CYII=" alt="GitHub" width="24" height="24" />
+      </a>
+      <span>
+        Created by
+        <a href="https://github.com/ShawTim" target="_blank" rel="noreferrer">ShawTim</a>.
+      </span>
+    </footer>
   </body>
 </html>
