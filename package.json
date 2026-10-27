@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/ShawTim/ifc-roof#readme",
   "devDependencies": {
-    "vite": "^7.3.5"
+    "vite": "^7.3.7"
   },
   "overrides": {
     "esbuild": ">=0.28.1",
